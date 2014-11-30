@@ -1,0 +1,1 @@
+function getJson(a){try{return JSON.parse(Fs.readText(a))}catch(e){return null}}exports.getJson=getJson;

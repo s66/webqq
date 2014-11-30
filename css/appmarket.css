@@ -1,0 +1,359 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+html {
+    overflow-y: scroll;
+}
+body {
+    background: none repeat scroll 0 0 #EBEFF2;
+    display: block;
+    font: 12px/1.5 tahoma,helvetica,clean,sans-serif;
+}
+a {
+    color: #45649E;
+}
+a:hover {
+    text-decoration: none;
+}
+a:focus {
+    outline-style: none;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+}
+
+body{display:none;}
+#container {
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 5px 0 0;
+    position: relative;
+    width: 883px;
+    _width: 1000px;
+    *zoom:1;
+}
+
+.cat_nav {
+    background:#EBEFF2;
+    border-right: 1px solid #A6A6A6;
+    color: #45659E;
+    height: 100%;
+    width: 90px;
+    overflow: hidden;
+    padding-top: 10px;
+    position: fixed;
+    *position:absolute;
+    *left:0;
+    _position:static;
+    _float:left;
+    _margin-right:-90px;
+    top: 35px;
+    z-index: 100;
+}
+.catNavTrigger {
+    background: url("./imgs/cat_bg.gif") no-repeat scroll 0 -66px;
+    cursor: pointer;
+    float: right;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 5px;
+    margin-right: -1px;
+    width: 83px;
+}
+.catNavTrigger:hover{background-position:0 -33px;}
+
+
+
+
+.catNavTrigger .cat_icon {
+    background: url("./imgs/cat_icon.png") repeat scroll 0 0;
+    float: left;
+    height: 16px;
+    margin: 8px 4px 0 8px;
+    width: 16px;
+}
+
+.catNavTrigger .cat_2 {
+    background-position: 0 0;
+}
+.catNavTrigger .cat_1 {
+    background-position: -16px 0;
+}
+.catNavTrigger .cat0 {
+    background-position: -32px 0;
+}
+.catNavTrigger .cat1 {
+    background-position: -48px 0;
+}
+.catNavTrigger .cat2 {
+    background-position: -80px 0;
+}
+.catNavTrigger .cat3 {
+    background-position: -64px 0;
+}
+.catNavTrigger .cat4 {
+    background-position: -96px 0;
+}
+.catNavTrigger .cat5 {
+    background-position: 0 -16px;
+}
+.catNavTrigger .cat6 {
+    background-position: -48px -16px;
+}
+.catNavTrigger .cat7 {
+    background-position: -16px -16px;
+}
+.catNavTrigger .cat8 {
+    background-position: -32px -16px;
+}
+.catNavTrigger .cat10 {
+    background-position: -80px -16px;
+}
+.catNavTrigger .cat11 {
+    background-position: -64px -16px;
+}
+.catNavTrigger .cat12 {
+    background-position: -96px -16px;
+}
+
+.cat_nav .select {
+    background: url("./imgs/cat_bg.gif") no-repeat scroll 0 0;
+    color: #4565A0;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+.page_container {
+    background: #FFFFFF;
+    display: inline;
+    float: left;
+    margin-left: 90px;
+    margin-top: 30px;
+    padding: 0 10px 10px 20px;
+}
+
+
+.page {
+    display: none;
+    position: relative;
+    width: 100%;
+}
+ 
+
+
+#all .region_l {
+    margin: 10px 18px 0 0;
+    min-height: 200px;
+    width: 519px;
+}
+.region {
+    display: block;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.appAllList .appSheetContainer {
+    padding-top: 2px;
+    position: relative;
+    top: -2px;
+    z-index: 1;
+}
+
+.appListUl, .appListLi {
+    cursor: pointer;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+.appDetailList .appListLi {
+    border-bottom: 1px dotted #8E8E8E;
+    height: 56px;
+    overflow: hidden;
+    padding: 10px 11px;
+    vertical-align: middle;
+}
+
+.appDetailList .column1 {
+    float: left;
+    margin-right: 15px;
+    position: relative;
+}
+
+.appDetailList .column2 {
+    float: left;
+    overflow: hidden;
+    width: 230px;
+}
+
+.appDetailList .column3 {
+    float: left;
+    margin: 0 20px 0 10px;
+    padding: 3px 5px;
+    text-align: right;
+    width: 80px;
+}
+.appDetailList .column4 {
+    float: left;
+}
+.appDetailList .appIcon {
+    cursor: pointer;
+    margin: 3px 0 0;
+}
+.appDetailList .appSmallIcon {
+    left: 7px;
+    position: absolute;
+    top: 7px;
+}
+.appDetailList .appName {
+    display: block;
+    float: left;
+    font-weight: bold;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+}
+.appDetailList .appName a {
+    color: #000000;
+    text-decoration: none;
+}
+.appDetailList .appBrief {
+    color: #969696;
+    cursor: pointer;
+    height: 18px;
+    margin-top: 4px;
+    overflow: hidden;
+    width: 270px;
+}
+.appStars {
+    background: url("./imgs/sprite.png?t=20111011001") no-repeat scroll -280px -2px;
+    display: block;
+    float: left;
+    height: 16px;
+    text-align: left;
+    width: 78px;
+}
+.appSheetContainer .appStars {
+    margin-top: 4px;
+}
+#main_region_lm .appStars {
+    float: none;
+    margin: 2px auto auto;
+}
+.appHD {
+    background: url("./imgs/icon.png?t=20111011001") no-repeat scroll 0 -64px;
+    float: left;
+    height: 15px;
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 18px;
+}
+.appHtml5 {
+    background: url("./imgs/icon.png?t=20111011001") no-repeat scroll -18px -64px;
+    float: left;
+    height: 15px;
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 12px;
+}
+.ie6_0 .appStars {
+    background-image: url("./imgs/sprite.gif?t=20111011001");
+}
+.appStar {
+    background: url("./imgs/sprite.png?t=20111011001") no-repeat scroll -280px -20px;
+    height: 100%;
+    width: 100%;
+}
+.ie6_0 .appStar {
+    background-image: url("./imgs/sprite.gif?t=20111011001");
+}
+.appStar0 {
+    background-position: 1000px 1000px;
+}
+.appStar1 {
+    background-position: -344px -20px;
+}
+.appStar2 {
+    background-position: -328px -20px;
+}
+.appStar3 {
+    background-position: -312px -20px;
+}
+.appStar4 {
+    background-position: -296px -20px;
+}
+.appStar5 {
+    background-position: -280px -20px;
+}
+.appAddBtn {
+    background: url("./imgs/sprite.png?t=20111011001") no-repeat scroll -217px -198px;
+    display: block;
+    height: 23px;
+    margin: 15px 5px 0;
+    overflow: hidden;
+    text-indent: -999em;
+    width: 62px;
+}
+.ie6_0 .appAddBtn {
+    background-image: url("./imgs/sprite.gif?t=20111011001");
+}
+.appAddBtn:hover {
+    background-position: -284px -198px;
+}
+.appAddedText {
+    color: #799C32;
+    cursor: text;
+    display: block;
+    height: auto;
+    margin: 10px 0 0;
+    text-align: center;
+    text-decoration: none;
+    text-indent: 0;
+    width: 62px;
+}
+.appAddedCount {
+    color: #969696;
+    float: left;
+    margin: 8px 0 0;
+}
+
+
+
+
+
+/*自定义样式*/
+
+#container{padding: 0;width:580px;}
+.page_container{margin-top: 0;}
+.page{display: block;}
+.cat_nav {top: 0;}
+.appDetailList .column1{width:48px;}
+.appDetailList .column2{width:270px;}
+.appDetailList .column3{display:none;}
+.appDetailList .column4{margin-left: 8px;}
+#all .region_l {width: auto;}
+.appDetailList .appBrief{word-break: break-all;width:270px;}
+html{overflow:hidden;}
+
+.appDetailList .appBrief,
+.appListUl, .appListLi {cursor:default;}

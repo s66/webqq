@@ -1,0 +1,15 @@
+.Zw_Pages{margin-top:12px;color:#333;text-align:center;}
+.Zw_Pages .cntbox{display:inline-block;overflow:hidden;}
+.Zw_Pages span{float:left;margin:1px;border:1px solid #333;padding:1px 6px;cursor:pointer;}
+.Zw_Pages .num{}
+.Zw_Pages .dot{border:none;padding:1px 7px;}
+
+.Zw_Pages .current,
+.Zw_Pages .prev:hover,
+.Zw_Pages .next:hover,
+.Zw_Pages .num:hover{color:#d50619;border-color:#d50619;}
+.Zw_Pages .disable{color:#ccc!important;border-color:#ccc!important;}
+
+.Zw_Pages .dot,
+.Zw_Pages .disable,
+.Zw_Pages .current{cursor:default;}
