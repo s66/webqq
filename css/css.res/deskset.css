@@ -1,0 +1,83 @@
+.desktopSettingHeader {
+    background: url(imgs/titlebg1.png) repeat-x 0 0;
+    height: 25px;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 3px 0 0 10px;
+}
+
+.desktopSettingBody {
+    color: #000000;
+    padding: 20px 0 20px 15px;
+}
+.dock_location_preview_contaienr {
+    padding: 0 0 20px;
+}
+.dock_location_preview {
+    border: 1px solid #999999;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #999999;
+    height: 248px;
+    margin: 60px auto 0;
+    position: relative;
+    width: 335px;
+}
+.dock_location_left {
+    background: url("./imgs/dock_location_left.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.dock_location_right {
+    background: url("./imgs/dock_location_right.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.dock_location_top {
+    background: url("./imgs/dock_location_top.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.dock_set_btn {
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    width: 60px;
+}
+.dock_set_btn_label {
+    display: block;
+    height: 100%;
+}
+.dock_set_btn_radio {
+    margin: 0 10px 0 0;
+    padding: 0;
+    vertical-align: middle;
+}
+.ie7_0 .dock_set_btn_radio {
+    margin: 0 6px 0 0;
+}
+.dock_set_left {
+    left: -80px;
+    margin-top: -12px;
+    top: 50%;
+}
+.dock_set_right {
+    margin-top: -12px;
+    right: -80px;
+    top: 50%;
+}
+.dock_set_top {
+    left: 50%;
+    margin-left: -25px;
+    top: -40px;
+}
+.navbar_preview {
+    background: url("./images/nav.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 19px;
+    padding-left: 220px;
+}
+.desktopSettingBody input, .desktopSettingBody label {
+    vertical-align: middle;
+}
+.navbar_settop_checkbox {
+    margin-right: 15px;
+}
+.default_desktop_setting input, .dsektop_icon_style_setting input {
+    margin-right: 10px;
+}
+.default_desktop_setting label, .dsektop_icon_style_setting label {
+    margin-right: 18px;
+}

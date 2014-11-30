@@ -1,0 +1,33 @@
+<?
+var getJson = $require('getJson.js').getJson;
+
+var defaultConfig = getJson($mappath('default.json'));
+
+
+id2data(defaultConfig.sidebar.apps);
+
+defaultConfig.desktop.desks.forEach(function(desk, i){
+    id2data(desk.apps);
+});
+
+
+function id2data(ids){
+    ids.forEach(function(appid, i){
+        data = getJson($mappath('data/'+Math.ceil(appid/1000)+'/'+ appid +'.json'));
+        if(data){
+            ids[i] = {
+                id: appid,
+                name: data.name,
+                ver: data.ver
+            };
+        }else{
+            ids[i] = {
+                id: appid,
+                name: '--'
+            };
+        }
+    });
+}
+
+$push(JSON.stringify(defaultConfig));
+?>

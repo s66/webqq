@@ -1,0 +1,1 @@
+/*body.css v1.01*/html,body{height:100%;overflow:hidden}a{outline:none;}body{position:absolute;width:100%;}body.showAppManagerPanel{    }body.showAppManagerPanel .SidebarWrapper,body.showAppManagerPanel .Taskbar,body.showAppManagerPanel #Contextmenu,body.showAppManagerPanel .DesktopWrapper{display:none;}body.showAppManagerPanel .appManagerPanel{display:block;}

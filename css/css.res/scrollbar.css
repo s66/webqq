@@ -1,0 +1,13 @@
+.scrollbar{
+    position:absolute;
+    display:none;
+    top:0;
+    right:0;
+    right:2px;
+    width: 10px;
+    height:100%;
+    background:rgb(102, 102, 102);
+    background:rgba(0, 0, 0, 0.3);
+    border-radius:5px;
+    z-index:999;
+}

@@ -1,0 +1,86 @@
+<?
+/*
+ * download.market.jhtml v1.01
+ * 抓取WEBQQ应用市场的数据 
+ * downloadApps(start, end) //从start-end位置抓取app的数据,默认start == end。即只抓取一个
+ * 
+ * */
+
+var NetBox = this.NetBox;
+
+function downloadApps(start, end){
+    start = +start;
+    end = +end || start;
+    var 
+    Socket = NetBox.CreateObject('NetBox.Socket'),
+    chache = NetBox.CreateObject('NetBox.Stream'), //数据缓存
+    header = [ //http请求头
+        'GET /cgi/qqweb/market/selectappinfo.do?appattrib={"start":'+ start +',"end":'+ end +',"category":-1,"orderBy":1,"type":-1} HTTP/1.1',
+        'Host: cgi.web2.qq.com',
+        'User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:25.0) Gecko/20100101 Firefox/25.0',
+        //'Accept-Language: zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3',
+        //'Accept-Encoding: gzip, deflate',
+        'Content-Type: utf-8',
+        'Connection: close',
+        //'Connection: keep-alive',
+        'Referer: http://cgi.web2.qq.com/proxy.html?v=20110412001&callback=1&id=1',
+        '',''
+    ];
+    Socket.Connect('cgi.web2.qq.com', 80);
+    Socket.Write(header.join('\r\n'));
+    
+
+    chache.open();
+    chache.CodePage = 65001;
+    while(!Socket.Eof()){
+        //chache.Write(Socket.BinaryRead(1<<10));
+        chache.Write(Socket.BinaryRead(1<<16));
+	}
+    chache.Position = 0;
+    return NetBox.Encoding.BinToStr(chache.read(), 65001).replace(/[^{]+?{/,'{').replace(/\r\n[\da-f]+\r\n/g, '');
+}
+
+function writeToJson(start, end){
+    start = +start;
+    end = +end || start;
+    try{
+        var 
+        jsonStr = downloadApps(start, end),
+        jsonObj = JSON.parse(jsonStr);
+
+        if(jsonObj.retcode == 0){ //正确返回
+            if(jsonObj.result && jsonObj.result.resultData){
+                Fs.writeText($mappath('apps/'+[start, end].join('-')+'.json'), JSON.stringify(jsonObj.result.resultData));
+                
+                $push(JSON.stringify({
+                    ret: 1,
+                    msg: '0k',
+                    count: jsonObj.result.resultData.length
+                }));
+            }
+        }else{ //返回超时数据
+            writeToJson(start, end);
+        }
+    }catch(e){
+        fail(e.message.slice(0, -2));
+    }
+    
+    function fail(msg){
+        if(!writeToJson.tryCount){
+            writeToJson.tryCount = 0;
+        }
+        if(++writeToJson.tryCount < 6){ //尝试重试5次
+            writeToJson(start, end);
+        }else{
+            $push(JSON.stringify({
+                ret: -1,
+                msg: msg,
+                start: start,
+                end: end
+            }));
+        }
+    }
+}
+writeToJson($GET['start'], $GET['end']);
+
+?>

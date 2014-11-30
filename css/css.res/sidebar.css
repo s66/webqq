@@ -1,0 +1,129 @@
+
+/*sidebar.css*/
+.SidebarWrapper{}
+.SidebarWrapper .guides{display:none;}
+.Sidebar-masklayer{z-index:999;display:none;position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;filter:alpha(opacity=0);background:#fff;}
+
+.SidebarWrapper .guides .top{
+	position:absolute;
+	width:100%;
+	height:20%;
+	border-bottom:1px dashed #000;
+}
+.SidebarWrapper .guides .left{
+	position:absolute;
+	bottom:0;
+	width:50%;
+	height:80%;
+	border-right:1px dashed #000;
+}
+
+.SidebarWrapper .sidebox{}
+.SidebarWrapper .sidebox .top,
+.SidebarWrapper .sidebox .left,
+.SidebarWrapper .sidebox .right{
+    position:absolute;
+    border:3px solid transparent;
+    _border-color:red;
+    _filter:chroma(color=red);
+    z-index:12;
+    display:none;
+}
+.SidebarWrapper .sidebox .top{
+	border-top:0;
+	left:50%;
+	width:570px;
+	height:67px;
+	margin-left:-285px;
+}
+.SidebarWrapper .sidebox .top .sidebar{
+	padding-top:4px;
+	padding-left:4px;
+	padding-bottom:5px;
+	width:566px;
+}
+.SidebarWrapper .sidebox .left{
+	border-left:0;
+	top:50%;
+	width:67px;
+	height:570px;
+	margin-top:-285px;
+}
+.SidebarWrapper .sidebox .left .sidebar{
+	padding-top:4px;
+	padding-left:4px;
+	padding-right:5px;
+	height:566px;
+}
+
+.SidebarWrapper .sidebox .right{
+	border-right:0;
+	top:50%;
+	right:0;
+	width:67px;
+	height:570px;
+	margin-top:-285px;
+}
+.SidebarWrapper .sidebox .right .sidebar{
+	padding-top:4px;
+	padding-right:4px;
+	padding-left:5px;
+	height:566px;
+}
+
+.SidebarWrapper .sidebox .top ul{width:446px;height:58px;}
+.SidebarWrapper .sidebox .top li{padding-left:5px;float:left;}
+.SidebarWrapper .sidebox .left ul,
+.SidebarWrapper .sidebox .right ul{height:446px;width:58px;}
+.SidebarWrapper .sidebox .left li,
+.SidebarWrapper .sidebox .right li{padding-top:5px;}
+
+/*focus*/
+.focus-top .guides,
+.focus-left .guides,
+.focus-right .guides{display:block;}
+
+.focus-top .sidebox .top,
+.focus-left .sidebox .left,
+.focus-right .sidebox .right{
+	border-color:#fff;
+    display:block;
+}
+.focus-top .sidebox .left,
+.focus-top .sidebox .right,
+.focus-left .sidebox .top,
+.focus-left .sidebox .right,
+.focus-right .sidebox .top,
+.focus-right .sidebox .left{border-color:blue;display:block;}
+
+/*toollist*/
+.SidebarWrapper .toollist{}
+.SidebarWrapper .toollist .item{height:31px;margin: 0 auto;width: 50px;}
+.SidebarWrapper .toollist .item span{cursor:pointer;float:left;width:20px;height:20px; margin: 5px 0;background:url(imgs/portal_all_png.png) no-repeat 0 0;}
+.SidebarWrapper .toollist .item2{height:50px;margin: 0 auto;width: 50px;}
+
+.SidebarWrapper .toollist{position:absolute;bottom:2px;height:115px;width:65px;}
+.layout-left .SidebarWrapper .toollist,
+.layout-right .SidebarWrapper .toollist{left:0;}
+.layout-top .SidebarWrapper .toollist{right:4px;top:3px;width:115px;height:60px;}
+.layout-top .SidebarWrapper .item{float: left;height: 60px; margin: 0 5px;width: 22px;_display:inline;}
+.SidebarWrapper .toollist .item .pinyin{background-position:-80px 0;}
+.SidebarWrapper .toollist .item .pinyin:hover{background-position:-80px -20px;}
+.SidebarWrapper .toollist .item .sound{background-position:0 0;}
+.SidebarWrapper .toollist .item .sound:hover{background-position:0 -20px;}
+.SidebarWrapper .toollist .item .setting{background-position:-60px 0;}
+.SidebarWrapper .toollist .item .setting:hover{background-position:-60px -20px;}
+.SidebarWrapper .toollist .item .theme{background-position:-40px 0;}
+.SidebarWrapper .toollist .item .theme:hover{background-position:-40px -20px;}
+
+.layout-left .toollist .item .sound,
+.layout-right .toollist .item .sound,
+.layout-left .toollist .item .theme,
+.layout-right .toollist .item .theme{margin-left:10px;}
+
+.SidebarWrapper .toollist .item .sound.mute{background-position:-20px 0;}
+.SidebarWrapper .toollist .item .sound.mute:hover{background-position:-20px -20px;}
+
+.layout-top .sidebox .top{background:url(imgs/dock_t.png) no-repeat -4px 0;display:block;}
+.layout-left .sidebox .left{background:url(imgs/dock_l.png) no-repeat 0 -3px;display:block;}
+.layout-right .sidebox .right{background:url(imgs/dock_r.png) no-repeat -6px -2px;display:block;}

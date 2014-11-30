@@ -1,0 +1,206 @@
+
+.app-icon{display:block;width:48px;height:48px;padding:5px;cursor:pointer;text-align:center;}
+.app-icon img{display:block;width:48px;height:48px;margin:0 auto;border:none;}
+.app-icon span{text-align:center;color:#fff;}
+.SidebarWrapper .app-icon{}
+.SidebarWrapper .app-icon span{display:none;}
+.SidebarWrapper .app-icon:hover{background:url(imgs/appbutton_mouseover_bg4.png) no-repeat;}
+.DesktopWrapper .app-icon:hover{}
+
+.DesktopWrapper .app-icon{width:78px;height:78px;padding:5px;padding-top:10px;}
+.DesktopWrapper .app-icon:hover{background:url(imgs/appbutton_mouseover_bg3.png) no-repeat 0 0;}
+.DesktopWrapper .app-icon img{margin-bottom:3px;}
+.DesktopWrapper .app-icon span{width:auto;padding:0px 6px;border-radius:12px;display:inline-block;vertical-align:middle;background:#5b4933;margin:0 auto;line-height:20px;word-break:break-all;overflow:hidden;height:20px;background: rgba(0, 0, 0, 0.3);}
+
+.DesktopWrapper .app-icon{position:absolute;}
+
+.big-appicon .app-icon{}
+.DesktopWrapper .small-appicon .app-icon{
+    height: 60px;
+    padding: 0;
+    width: 60px;
+}
+.DesktopWrapper .small-appicon .app-icon:hover{background:none;}
+.DesktopWrapper .small-appicon .app-icon img{width:32px;height:32px;}
+.DesktopWrapper .small-appicon .app-icon span{
+    padding: 0 6px;
+}
+
+/*修正ie的hover bug，强制重写hover的background*/
+.fixhover.app-icon{background:none!important;}
+
+
+.appManagerPanel {
+
+    display: none;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    min-width: 540px;
+}
+
+
+.aMg_dock_container {
+    background: url("./imgs/amg_top.png") repeat-x scroll 0 0;
+    height: 60px;
+    overflow: hidden;
+    padding: 10px;
+}
+.ie7_0 .aMg_dock_container, .ie6_0 .aMg_dock_container {
+    background: none repeat scroll 0 center;
+}
+.aMg_line_x {
+    background: none repeat scroll 0 0;
+    border-bottom: 1px solid #666666;
+    font-size: 0;
+    height: 0;
+    width: 100%;
+}
+.aMg_line_y {
+    background: url("./imgs/line_y.png") repeat-y scroll 0 0;
+    height: 100%;
+    left: -1px;
+    position: absolute;
+    top: 0;
+    width: 3px;
+}
+.ie7_0 .aMg_line_y, .ie6_0 .aMg_line_y {
+    background: none repeat scroll 0 0 #666666;
+    width: 2px;
+}
+.aMg_folder_container {
+    background: url("./imgs/amg_body.png") repeat scroll 0 0;
+    overflow: hidden;
+}
+.ie7_0 .aMg_folder_container, .ie6_0 .aMg_folder_container {
+    background: none repeat scroll 0 center;
+}
+.folderItem {
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    transform: rotateY(70deg);
+    -o-transform: rotateY(70deg);
+    -webkit-transform: rotateY(70deg);
+    
+    transform-origin: center center 0;
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    -o-transform-origin: center center;
+    transition: transform 0.8s linear 0s;
+    -o-transition: -o-transform .8s linear;
+    -webkit-transition: -webkit-transform .8s linear;
+    width: 20%;
+}
+.folderItem_turn .folderItem {
+    transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    
+}
+.folder_bg {
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70px;
+}
+.folder_bg1 {
+    background: url("./imgs/amg_1.png?t=20111011001") no-repeat scroll right top;
+}
+.folder_bg2 {
+    background: url("./imgs/amg_2.png?t=20111011001") no-repeat scroll right top;
+}
+.folder_bg3 {
+    background: url("./imgs/amg_3.png?t=20111011001") no-repeat scroll right top;
+}
+.folder_bg4 {
+    background: url("./imgs/amg_4.png?t=20111011001") no-repeat scroll right top;
+}
+.folder_bg5 {
+    background: url("./imgs/amg_5.png?t=20111011001") no-repeat scroll right top;
+}
+.folderOuter {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    
+}
+.folderInner {
+    min-width: 180px;
+    position: relative;
+    z-index: 1;
+    padding:2px 0 0 0;
+}
+.amg_folder_appbutton {
+    display: block;
+    float: none;
+    height: 30px;
+    margin-bottom: 5px;
+    width: auto;
+}
+
+
+.folderInner .iconbox{
+    height:30px;
+    overflow:hidden;
+    margin-bottom:5px;
+    padding-left:16px;
+}
+.folderInner .iconbox:hover {
+    background: url("./imgs/appbutton_mouseover_bg5.png?t=20111011001") repeat-x;
+}
+
+.folderInner .iconbox .app-icon{
+    text-align:left;
+    padding:2px;
+    float:left;
+}
+.folderInner .iconbox .app-icon img{
+    width:26px;height:26px;
+    display:inline-block;
+}
+.folderInner .iconbox .app-icon span{
+    display:none;
+}
+.folderInner .iconbox span{
+    float:left;
+    line-height: 30px;
+    text-indent: -16px;
+    color:#fff;
+}
+.aMg_dock_container .appButton {
+    height: 60px;
+    width: 70px;
+}
+.aMg_dock_container .appButton_appName {
+    display: none;
+}
+.aMg_dock_container .iconbox{padding-left:5px;float:left;}
+
+.aMg_dock_container .app-icon span{display:none;}
+.aMg_dock_container .app-icon:hover{background:url(imgs/appbutton_mouseover_bg4.png) no-repeat;}
+
+.aMg_close {
+    background: url(imgs/back_normal.png?t=20111011001) no-repeat;
+    cursor: pointer;
+    height: 37px;
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 90px;
+}
+.aMg_close:hover {
+    background: url("./imgs/back_hover.png?t=20111011001") no-repeat;
+}
+.aMg_close:active {
+    background: url("./imgs/back_click.png?t=20111011001") no-repeat;
+}
+
+
+

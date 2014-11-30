@@ -1,0 +1,20 @@
+
+/*Style.css*/
+.Style-bgimgbox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+    
+}
+.Style-bgimgbox img{position:absolute;width:100%;z-index:-1;}
+
+
+.Style-bigpic-list{overflow-y:scroll;height:100%;}
+.Style-bigpic-list ul{overflow:hidden;padding:4px;}
+.Style-bigpic-list li{cursor:pointer;margin:4px;float:left;_display:inline;padding:8px;border-radius:8px;}
+.Style-bigpic-list li:hover{background:#cbe7fc;}
+
+
+
+

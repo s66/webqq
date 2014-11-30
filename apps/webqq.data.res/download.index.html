@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<title>下载WEBQQ应用市场数据</title>
+<meta charset="utf-8"/>
+<script src="http://lib.1kjs.com/dev/1k.jjs"></script>
+<style>
+.loadingbar-warpper{
+    width: 802px;
+    border: 1px solid #000;
+    margin-top: 8px;
+}
+#loadingbar{
+    width: 10px;
+    height: 6px;
+    margin: 1px;
+    background: #000;
+    _overflow: hidden;
+}
+#count{margin-right: 8px;}
+</style>
+</head>
+<body>
+
+
+<span id="rate">进度：0/0</span>
+<button id="start">start</button>
+<button id="stop">stop</button>
+
+<div class="loadingbar-warpper"><div id="loadingbar"></div></div>
+
+
+
+
+<script ztype="text/plain">
+
+!function(Z){
+    var
+    datas = {
+        count: 0,
+        apps: []
+    },
+    TOTAL = 5105, //应用总数
+    SIZE = 96, //分页大小
+    start = 1, //开始位置
+    currentCount = 0, //当前已经下载的应用总数
+    stop = 0,
+    xxx;
+    window.datas = datas;
+
+    Z('#start').click(getDownloadInfo);
+    Z('#stop').click(function(){
+		stop = 1;
+	});
+    
+    function getDownloadInfo(){
+        Z.get('download.market.jhtml', function(result){
+            if(result && result.ret == 1){
+                currentCount += result.count;
+                datas.count = currentCount;
+                datas.apps.push(result.apps);
+                
+                Z('#rate').html('进度：'+ [currentCount, TOTAL].join('/'));
+                Z('#loadingbar').width(800*currentCount/TOTAL);
+      
+                start += SIZE;
+                if(!stop && start <= TOTAL){ //目前应用总量
+                    getDownloadInfo();
+                }
+                
+            }else{}
+            
+		}, {
+            start: start,
+            end: start + SIZE - 1
+        });
+
+    }
+    
+
+}($1k);
+	
+</script>
+</body>	
+</html>

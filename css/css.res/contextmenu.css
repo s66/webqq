@@ -1,0 +1,30 @@
+
+/*Contextmenu.css 右键菜单样式*/
+#Contextmenu{}
+.Contextmenu{position:absolute;width:136px;font-size:12px;display:none;z-index:22222;}
+.Contextmenu ul{padding:0;margin:0;cursor:default;border:1px solid #ccc;background:#fff;*zoom:1;}
+.Contextmenu li{position:relative;list-style:none;padding:0 5px;height:25px;line-height:24px;color:#333;cursor:pointer;margin:1px;*float:left;*width:124px;}
+.Contextmenu li:hover{background:#348ccc;color:#eee;}
+
+.Contextmenu .line{*width:100%;cursor:default;height:0px;*line-height:0;border-bottom:1px solid #ccc;margin:1px 0;padding:0;}
+.Contextmenu li .text{display:block;margin: 0 20px;width:86px;overflow:hidden;}
+.Contextmenu .l_icon,
+.Contextmenu .r_icon{
+    background:url("imgs/portal_all_png.png?t=20111011016") no-repeat 16px 16px;
+    top:5px;
+    position:absolute;
+    width:16px;
+    height:16px;
+}
+
+.Contextmenu .l_icon{left:4px;}
+.Contextmenu .r_icon{right:4px;}
+.Contextmenu .disabled{cursor:default;color:#ccc!important;background:#fff!important;}
+.Contextmenu .selected{background-position:-100px -460px;}
+.Contextmenu .showsubmenu{background-position:-120px -458px;}
+
+.Contextmenu li:hover .showsubmenu{background-position: -140px -458px;}
+.Contextmenu li:hover ul{display:block;}
+
+.Contextmenu li ul{display:none;position:absolute;left:130px;top:0px;}
+

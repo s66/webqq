@@ -1,0 +1,216 @@
+
+.DesktopWrapper{
+
+}
+.desksContainer{
+  
+    
+}
+
+.deskContainer{
+    position: absolute;
+    left: 2000px;
+    top:0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.applistContainer{
+    position:absolute;
+    margin-bottom:64px;
+    margin-bottom:28px;
+    margin-left:28px;
+    margin-top:46px;
+    overflow:hidden;
+}
+.applistContainer .applist{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    left:0;top:0;
+    _background:url(about:blank);
+}
+
+
+
+.layout-left .applistContainer{
+    left:70px; 
+}
+.layout-top .applistContainer{
+    top:70px;
+}
+.layout-right .applistContainer{
+    right:70px;
+}
+.deskContainer.current{
+    left: 0;
+}
+
+
+.navbar{
+    position: absolute;
+    z-index: 199;
+    width: 240px;
+    text-align: center;
+    left: 80px;
+    top: 4px;
+    margin:8px;
+    margin-bottom:60px;
+}
+/*
+.layout-top .navbar{margin-top:70px;margin-top:78px;}
+.layout-left .navbar{margin-left:70px;}
+.layout-right .navbar{margin-right:70px;}
+*/
+
+
+.indicatorContainer,
+.indicatorContainer .indicator_manage,
+.indicatorContainer .icon_bg,
+.indicatorContainer .icon_1,
+.indicatorContainer .icon_2,
+.indicatorContainer .icon_3,
+.indicatorContainer .icon_4,
+.indicatorContainer .icon_5{
+    background: url(imgs/sprite_main_png.png) no-repeat;
+}
+
+.navbar .indicatorContainer{
+    height: 36px;
+    background-position: -140px -45px; 
+    
+}
+.indicatorContainer .header,
+.indicatorContainer .indicator{
+    
+    background-position: 10000px 10000px;
+    color: #0DBBF1;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    font-family: 宋体;
+    font-size: 18px;
+    font-weight: bold;
+    height: 20px;
+    line-height: 1.5;
+    margin: 4px 2px 0;
+    outline: 0 none;
+    position: relative;
+    text-indent: -999em;
+    width: 20px;
+}
+.indicatorContainer .header{
+    background-position: -418px -158px;
+    display: inline;
+    height: 32px;
+    margin: -10px 6px 0 6px;
+    position: relative;
+    width: 32px;
+}
+.indicatorContainer .header img{
+    display: inline;
+    float: left;
+    height: 24px;
+    margin: 4px 0 0 4px;
+    width: 24px;
+}
+
+
+.indicatorContainer .indicator.current .icon_bg{
+    display: none;
+    height: 26px;
+    left: -6px;
+    position: absolute;
+    top: -6px;
+    width: 26px;
+    z-index: 1;
+}
+
+.indicatorContainer .indicator.current .icon_bg{
+    background-position: -354px -154px;
+    display: block;
+}
+
+.indicatorContainer .indicator .icon_1,
+.indicatorContainer .indicator .icon_2,
+.indicatorContainer .indicator .icon_3,
+.indicatorContainer .indicator .icon_4,
+.indicatorContainer .indicator .icon_5{
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.bg_corner {
+    height: 26px;
+    position: absolute;
+    width: 11px;
+}
+.indicatorContainer .icon_1 {
+    background-position: -336px -132px;
+}
+.indicatorContainer .icon_2 {
+    background-position: -366px -132px;
+}
+.indicatorContainer .icon_3 {
+    background-position: -396px -132px;
+}
+.indicatorContainer .icon_4 {
+    background-position: -426px -132px;
+}
+.indicatorContainer .icon_5 {
+    background-position: -456px -132px;
+}
+.indicatorContainer .icon_1:hover {
+    background-position: -140px -132px;
+}
+.indicatorContainer .icon_2:hover {
+    background-position: -180px -132px;
+}
+.indicatorContainer .icon_3:hover {
+    background-position: -220px -132px;
+}
+.indicatorContainer .icon_4:hover {
+    background-position: -260px -132px;
+}
+.indicatorContainer .icon_5:hover {
+    background-position: -300px -132px;
+}
+.indicatorContainer .current .icon_1 {
+    background-position: -140px -132px;
+}
+.indicatorContainer .current .icon_2 {
+    background-position: -180px -132px;
+}
+.indicatorContainer .current .icon_3 {
+    background-position: -220px -132px;
+}
+.indicatorContainer .current .icon_4 {
+    background-position: -260px -132px;
+}
+.indicatorContainer .current .icon_5 {
+    background-position: -300px -132px;
+}
+
+.indicatorContainer .indicator_manage, 
+.indicatorContainer .indicator_search {
+    float: right;
+    height: 24px;
+    width: 24px;
+    
+    display:inline;
+}
+
+.indicatorContainer .indicator_manage {
+    background-position: -132px -157px;
+    margin: 2px 5px;
+    margin-right:35px;
+    *zoom:1;
+}
+.indicatorContainer .indicator_manage:hover {
+    background-position: -207px -157px;
+}

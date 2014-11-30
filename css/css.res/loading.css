@@ -1,0 +1,6 @@
+.loading{position:absolute;z-index:9999;width:100%;height:100%;background:#B4D9F1;}
+.loading-box{position:relative;width:200px;left:50%;top:50%;margin:0 -100px;border:1px solid #999999;background:#666;}
+.loading-bar{width:0px;height:2px;background:yellow;overflow:hidden;}
+.loading-box,
+.loading-bar{height:2px;line-height:0;}
+.loading span{position:absolute;font-size:12px;line-height:12px;color:#333;top:-16px;width:100%;text-align:center;}

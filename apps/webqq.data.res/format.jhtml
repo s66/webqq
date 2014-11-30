@@ -1,0 +1,137 @@
+
+<!doctype html>
+<html>
+<head>
+<title>初始化app数据</title>
+<style>
+#msgbox{padding:8px;border:1px solid #666;background:#eee;font-size:12px;line-height:2;width:600px;}	
+	
+</style>
+<script>
+function msg(txt){
+	document.getElementById('msgbox').innerHTML += txt +'<br/>';
+}
+	
+</script>
+</head>
+<body>
+<h1>初始化app数据</h1>
+<p id="msgbox"></p>
+<?
+    Response.noBuffer(0);
+	Response.write($ZERO.getContent());
+	$ZERO.clearContent();
+    
+	msg('数据加载中...');
+    
+    var 
+    apps = [],
+    files = Fs.getFolder($mappath('apps')).Files,
+    //files = Fs.getFolder($mappath('olddata/data')).Files,
+    file;
+    msg(files.count);
+    
+    for(var i = 1; i <= files.count; i++){
+        file = files(i);
+        
+        apps = apps.concat( JSON.parse( Fs.readText(file.path, 65001) ) );
+        //apps.push( JSON.parse( Fs.readText(file.path, 65001) ) );
+    }
+	Sys.wait(500);
+    msg('数据加载成功，总计'+apps.length+'个');
+    
+	Sys.wait(500);
+	msg('准备解析数据');
+    
+    
+   
+    var
+    list = {
+        '-1': []
+    },
+    i = 0,
+    lg = apps.length;
+    Sys.loop(function(){
+        var j = 0;
+        while(i < lg){
+            format(apps[i++]);
+            if(++j > 500){
+                break;
+            }
+        }
+        msg('已经解析'+i+'条数据');
+        return i == lg;
+    }, 10);
+    
+    msg('数据解析完成！');
+    
+    createList();
+    
+    
+    function format(app){
+        app = app || {};
+        var exinfo = app.exinfo;
+        if(exinfo && exinfo.loginLevel <= 1){
+            var app2 = {
+                name: app.appName,
+                id: app.id,
+                url: app.appUrl,
+                category: app.category,
+                brief: app.appBrief,
+                desc: app.appDesc,
+                mode: 1,
+                ver: exinfo.ver,
+                exinfo: {}
+            };
+            
+            if(exinfo.width){
+                app2.width = exinfo.width;
+            }
+            if(exinfo.height){
+                app2.height = exinfo.height;
+            }
+
+            Fs.writeText($mappath('data/'+Math.ceil(app.id/1000)+'/'+app.id+'.json') , JSON.stringify(app2), 65001);
+            if(!list[app.category]){
+                list[app.category] = [];
+            }
+            
+            var app3  = {
+                id: app2.id,
+                name: app2.name,
+                ver: app2.ver
+            };
+            list[app.category].push(app3);
+            list['-1'].push(app3);    
+        }
+    }
+    
+    function createList(){
+        msg('开始创建列表页');
+        var LIST_SIZE = 96;
+        
+        $each(list, function(apps, category){
+            var 
+            i = 0,
+            page = 0;
+
+            while(i <= apps.length){
+                Fs.writeText($mappath('list/'+[category, ++page].join('_')+'.json') , JSON.stringify({
+                    ret: 1,
+                    count: apps.length,
+                    apps: apps.slice(i, i += LIST_SIZE)
+                }), 65001);
+            } 
+        });
+        msg('列表页创建完成！');
+        
+    }
+    
+    function msg(txt){
+        Response.write('<script>msg("'+txt+'")</script>');
+    }
+?>
+
+</body>
+</head>
+</html>

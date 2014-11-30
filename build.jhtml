@@ -1,0 +1,50 @@
+<!doctype html>
+<ul>
+<li>start</li>
+</ul>
+<script>
+var ol = document.getElementsByTagName('ul')[0];
+function add(html){
+	var li = document.createElement('li');
+	li.innerHTML = html;
+	ol.insertBefore(li, ol.firstChild);
+}
+</script>
+<?
+var t = +new Date;
+//$1k.console('\n\n####开始生成静态文件！');
+Response.noBuffer();
+
+Fs.eachFiles($ROOTPATH, {
+    matchFile: /\.(html|css|js|json|jpg|png|gif)$/,
+    skipFile: /\.res(\.|$)/,
+    skipFolder: /\.?res$|^lab$/
+}, true, function(fileInfo){
+    var t1 = +new Date;
+    var filePath = fileInfo.path.replace('dev', 'gh-pages');
+    
+    if(/^(jpg|png|gif)$/.test(Fs.ext(fileInfo))){
+        Fs.syncFile(filePath, fileInfo.path);
+        
+    }else{
+        
+        var text = Zero.getContent(fileInfo.path);
+        
+        if(Fs.ext(fileInfo) == 'js' && fileInfo.name.indexOf('.unpack') == -1 && !/\\js\\index\.js$|tool\\packer\\p2\.js$/.test(filePath)){
+            text = Packer.pack(text);
+        }
+        
+        Fs.syncText(filePath, text);
+    }
+    
+    
+    
+    var t2 = +new Date;
+    //$1k.console(filePath+' '+(t2-t1)+'ms');
+    //$push('<li>'+filePath+' '+(t2-t1)+'ms</li>');
+	$push('<script>add("'+filePath.replace(/\\/g, '\\\\')+' '+(t2-t1)+'ms")</script>');
+});
+
+//$1k.console('文件生成结束，耗时'+(+new Date - t)+'ms');
+$push('<script>add("文件生成结束，耗时'+(+new Date - t)+'ms")</script>');
+?>
