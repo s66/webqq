@@ -497,7 +497,7 @@ $1k = function(){
                     ? evt.stopPropagation() 
                     : (evt.cancelBubble = true);
             },
-            mouseKey: ($browser.ie ? {1: 'L', 4: 'M', 2: 'R'} : {0: 'L', 1: 'M', 2: 'R'})[evt.button],
+            mouseKey: ($browser.ie < 9 ? {1: 'L', 4: 'M', 2: 'R'} : {0: 'L', 1: 'M', 2: 'R'})[evt.button],
             preventDefault: function(){
                 evt.preventDefault 
                     ? evt.preventDefault()
